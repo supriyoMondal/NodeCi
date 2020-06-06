@@ -63,7 +63,7 @@ describe('when logged in', async () => {
 
 })
 describe('when not logged in', async () => {
-    test.only('User cannot create blog posts', async () => {
+    test('User cannot create blog posts', async () => {
         let res = await page.post('/api/blog', { title: "test", content: "test" });
         expect(res.error).toEqual("You must log in!")
     })
