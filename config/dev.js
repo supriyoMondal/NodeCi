@@ -4,4 +4,5 @@ module.exports = {
   googleClientSecret: 'ZeQAgHIY1-Y9wysAuuWKT3vX',
   mongoURI: 'mongodb://localhost:27017/tshertshop',
   cookieKey: '123123123',
+  redisUrl: 'redis://127.0.0.1:6379'
 };

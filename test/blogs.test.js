@@ -5,7 +5,7 @@ let page;
 
 beforeEach(async () => {
     page = await Page.build();
-    await page.goto('localhost:3000');
+    await page.goto('http://localhost:3000');
 })
 
 afterEach(async () => {
@@ -63,10 +63,10 @@ describe('when logged in', async () => {
 
 })
 describe('when not logged in', async () => {
-    test('User cannot create blog posts', async () => {
-        let res = await page.post('/api/blog', { title: "test", content: "test" });
-        expect(res.error).toEqual("You must log in!")
-    })
+    // test.only('User cannot create blog posts', async () => {
+    //     let res = await page.post('/api/blog');
+    //     expect(res.error).toEqual("You must log in!")
+    // })
     test('no list of blogs', async () => {
         let res = await page.get('/api/blogs');
         expect(res.error).toEqual("You must log in!")
